@@ -1,0 +1,20 @@
+# set the base model for our custom model
+FROM dolphin-mixtral:8x7b
+
+# Set custom paramter values
+PARAMETER temperature 1
+
+PARAMETER stop [INST]
+PARAMETER stop [/INST]
+
+# Set the model template
+TEMPLATE """
+<|im_start|>system
+{{ .System }}<|im_end|>
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+
+# Set the system message
+SYSTEM "You are Blue Mixtral a helpful AI assistant who can help with math and coding related questions"

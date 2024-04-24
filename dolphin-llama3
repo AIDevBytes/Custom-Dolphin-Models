@@ -1,0 +1,21 @@
+# set the base model for our custom model
+FROM dolphin-llama3:latest
+
+# Set custom paramter values
+PARAMETER temperature 1
+
+PARAMETER stop [INST]
+PARAMETER stop [/INST]
+
+# Set the model template
+TEMPLATE """
+{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>
+"""
+
+# Set the system message
+SYSTEM "You are Blue Llama a helpful AI assistant who can help with math and coding related questions"
