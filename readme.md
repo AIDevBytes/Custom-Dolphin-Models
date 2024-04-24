@@ -1,4 +1,4 @@
-# Custom Dolphin Llama 3 and Dolphin Mixtral Models
+# Custom Dolphin Llama 3 and Dolphin Mixtral Model Files
 
 This repo is a companion to the YouTube video titled: <a href="">Create your own CUSTOM Dolphin Llama 3 and Dolphin Mixtral models using Ollama</a>. You can find the custom model file named "custom-mixtral" to use as a starting pointing for creating your own custom Mixtral 8x7b model to be run with Ollama.
 
